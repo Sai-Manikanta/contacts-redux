@@ -1,4 +1,10 @@
-function Contact({ selectedContact:contact }) {
+import { useSelector } from 'react-redux'
+
+function Contact() {
+    const contact = useSelector(store => store.contacts.selectedContact);
+
+    if(!contact.hasOwnProperty('_id')) return null
+
     return (
         <div className="p-6 flex-grow bg-gray-100">
             <div className="flex flex-col items-center">
