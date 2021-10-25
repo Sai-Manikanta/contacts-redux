@@ -1,14 +1,22 @@
 import { v4 as uuidv4 } from 'uuid';
-import { CONTACT_ADD, CONTACT_EDIT, CONTACT_DELETED, CONTACT_SELECTED } from './actionTypes';
+import { CONTACT_ADD, CONTACT_EDIT, CONTACT_DELETED, CONTACT_SELECTED, REMOVE_CONTACT_SELECTED, SET_SEARCH_QUERY } from './actionTypes';
 
 const intialState = {
     list: [
         {
             _id: 1,
+            fullName: 'Saurab sir',
+            email: 'saurab@gmail.com',
+            phone: '9755570187',
+            company: 'Software',
+            address: 'Hyderabad'
+        },
+        {
+            _id: 2,
             fullName: 'Sai Mani Bandaru',
             email: 'mani333007@gmail.com',
             phone: '9505629940',
-            company: 'Will Soft',
+            company: 'soft',
             address: 'Hyderabad'
         },
         {
@@ -28,27 +36,27 @@ const intialState = {
             address: 'Hyderabad'
         }
     ],
-    count: 20,
-    loading: false,
-    error: null,
-    selectedContact: {}
+    selectedContact: {},
+    searchedQuery: ''
 };
 
 function contactsReducer(state = intialState, action){
     switch(action.type){
         case CONTACT_ADD:
             return {
+                ...state,
                 list: [
                     ...state.list,
                     {
-                        _id: uuidv4(),
-                        ...action.payload
+                        ...action.payload,
+                        _id: uuidv4()
                     }
                 ]
             }
         case CONTACT_EDIT:
             return {
-                list: []
+                ...state,
+                list: state.list.map(contact => contact._id === action.payload._id ? { ...action.payload } : contact)
             }
         case CONTACT_DELETED:
             return {
@@ -59,6 +67,17 @@ function contactsReducer(state = intialState, action){
             return {
                 ...state,
                 selectedContact: action.payload
+            }
+
+        case REMOVE_CONTACT_SELECTED:
+            return {
+                ...state,
+                selectedContact: {}
+            }
+        case SET_SEARCH_QUERY:
+            return {
+                ...state,
+                searchedQuery: action.payload
             }
         default:
             return state

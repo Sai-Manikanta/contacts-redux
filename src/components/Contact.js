@@ -9,8 +9,8 @@ function Contact() {
         <div className="p-6 flex-grow bg-gray-100">
             <div className="flex flex-col items-center">
                 <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white w-14 h-14 text-xl rounded-full flex justify-center items-center">
-                    {contact.fullName.split(' ')[0] && contact.fullName.split(' ')[0][0]}
-                    {contact.fullName.split(' ')[1] && contact.fullName.split(' ')[1][0]}
+                    {contact.fullName.split(' ')[0] && contact.fullName.split(' ')[0][0].toUpperCase() }
+                    {contact.fullName.split(' ')[1] && contact.fullName.split(' ')[1][0].toUpperCase() }
                 </span>
                 <h2 className="mt-1 font-semibold text-gray-700">
                     {contact.fullName}

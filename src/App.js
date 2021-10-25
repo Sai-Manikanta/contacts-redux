@@ -1,6 +1,7 @@
+import Header from "./components/Header";
 import Contacts from "./components/Contacts";
 import Contact from './components/Contact';
-import Header from "./components/Header";
+import AddEditContactModal from "./components/AddEditContactModal";
 
 function App() {
     return (
@@ -10,6 +11,7 @@ function App() {
                 <Contacts />
                 <Contact />
             </div>
+            <AddEditContactModal />
         </div>
     )
 }
