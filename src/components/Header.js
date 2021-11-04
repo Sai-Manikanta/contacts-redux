@@ -21,11 +21,11 @@ function Header() {
 
     return (
         <header>
-            <h1 className="flex items-center text-3xl">
+            <h1 className="flex items-center text-xl sm:text-3xl">
                 <TiContacts className="mr-2" />
                 Contacts Application
             </h1>
-            <div className="flex mt-4">
+            <div className="flex flex-col sm:flex-row mt-4">
                 <input 
                     type="text" 
                     placeholder="Search contacts" 
@@ -34,7 +34,7 @@ function Header() {
                     onChange={handleSearchQueryChange}
                 />
                 <button 
-                    className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white ml-4 px-3 text-sm rounded flex items-center"
+                    className="bg-gradient-to-r mt-4 sm:mt-0 from-purple-400 via-pink-500 to-red-500 text-white ml-4 px-3 text-sm rounded flex items-center justify-center p-1"
                     onClick={() => dispatch(openModal({}))}
                 >
                     <AiOutlinePlus className="mr-1" />

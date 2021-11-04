@@ -18,26 +18,28 @@ function Contact() {
                 <p className="text-sm text-gray-600">{contact.company}</p>
             </div>
             <table className="w-full mt-3">
-                <tr className="border-b">
-                    <th className="p-3 text-left text-gray-500 font-normal">Full Name:</th>
-                    <td>{contact.fullName}</td>
-                </tr>
-                <tr className="border-b">
-                    <th className="p-3 text-left text-gray-500 font-normal">Email:</th>
-                    <td>{contact.email}</td>
-                </tr>
-                <tr className="border-b">
-                    <th className="p-3 text-left text-gray-500 font-normal">Phone:</th>
-                    <td>{contact.phone}</td>
-                </tr>
-                <tr className="border-b">
-                    <th className="p-3 text-left text-gray-500 font-normal">Company:</th>
-                    <td>{contact.company}</td>
-                </tr>
-                <tr>
-                    <th className="p-3 text-left text-gray-500 font-normal">Address:</th>
-                    <td>{contact.address}</td>
-                </tr>
+                <tbody>
+                    <tr className="border-b">
+                        <th className="p-3 text-left text-gray-500 font-normal">Full Name:</th>
+                        <td>{contact.fullName}</td>
+                    </tr>
+                    <tr className="border-b">
+                        <th className="p-3 text-left text-gray-500 font-normal">Email:</th>
+                        <td>{contact.email}</td>
+                    </tr>
+                    <tr className="border-b">
+                        <th className="p-3 text-left text-gray-500 font-normal">Phone:</th>
+                        <td>{contact.phone}</td>
+                    </tr>
+                    <tr className="border-b">
+                        <th className="p-3 text-left text-gray-500 font-normal">Company:</th>
+                        <td>{contact.company}</td>
+                    </tr>
+                    <tr>
+                        <th className="p-3 text-left text-gray-500 font-normal">Address:</th>
+                        <td>{contact.address}</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     )

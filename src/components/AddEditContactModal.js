@@ -8,6 +8,8 @@ const styles = {
     content: { top: '30%', left: '30%', right: '30%', bottom: '30%' }
 }
 
+Modal.setAppElement('#root');
+
 function AddEditContactModal() {
     const [contact, setContact] = useState({ _id: '', fullName: '', email: '', phone: '', company: '', address: '' });
 
